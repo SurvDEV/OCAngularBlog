@@ -1,0 +1,16 @@
+<li
+  [ngClass]="{'list-group-item': true,
+            'list-group-item-success': postLove > 0,
+            'list-group-item-danger': postLove < 0}"
+  style="margin-bottom:1%;"
+>
+    <div class="d-flex justify-content-between align-items-center">
+        <h4>{{ postTitle }}</h4>
+        <span style="color:black;"><i>{{ postDate | date: 'short' }}</i></span>
+    </div>
+    <p>{{ postContent }}</p>
+    <div>
+        <button class="btn btn-success" style="margin-right:1%;" (click)="onLike()">Love it <i class="fas fa-heart"></i></button>
+        <button class="btn btn-danger" (click)="onDislike()">Don't love it <i class="fas fa-heart-broken"></i></button>
+    </div>
+</li>
